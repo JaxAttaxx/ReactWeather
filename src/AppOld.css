@@ -1,0 +1,55 @@
+body {
+  background: url('https://images.pexels.com/photos/1154510/pexels-photo-1154510.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
+  background-size: 150%;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: chartreuse;
+}
+
+.hourCard {
+  background-color: lightgreen;
+  width: 15vw;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 20px;
+}
+
+.main-card {
+  display: flex;
+  overflow: scroll;
+}
+
+@media screen and (max-width: 768px) {
+  .main-card {
+    display: flex;
+    overflow: scroll;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hourCard {
+    background-color: lightgreen;
+    width: 35vw;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
