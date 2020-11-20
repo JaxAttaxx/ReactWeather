@@ -1,10 +1,9 @@
-import Card from "./components/Card"
+
 import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import Home from './components/Home';
 import Multiday from './components/Multiday';

@@ -22,7 +22,7 @@ console.log(userLocation)
             })
             .catch(error => console.log(error))
 
-    }, [])
+    }, [userLocation])
 
     if (!weatherInfo) {
         return ""

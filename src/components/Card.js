@@ -26,7 +26,7 @@ export default function Card(props) {
             })
             console.log("Weather Infos", weatherInfo)
     }
-            , [])
+            , [weatherInfo, dispatch, userLocation])
         if (!weatherInfo) {
             return ""
         }
