@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { APIkey, Imperial } from '../config'
 import WeatherIcon from 'react-icons-weather';
-import { useSelector , useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 export default function Multiday(props){
 
@@ -11,15 +11,14 @@ console.log(userLocation)
     const [weatherInfo, setWeatherInfo] = useState(null)
 
     useEffect(() => {
-        // console.log("La de da")
+        
         fetch(`https://api.openweathermap.org/data/2.5/forecast?zip=${userLocation}${Imperial}&appid=${APIkey}`)
             .then(res => res.json())
-            // .then(data => data)
-            // .then(data => setWeatherInfos(data))
+            
             .then(data => {
                 console.log(data)
                 setWeatherInfo(data)
-                // setWeatherInfos(weatherInfos.concat(data.weatherInfo))
+                
             })
             .catch(error => console.log(error))
 
@@ -29,8 +28,6 @@ console.log(userLocation)
         return ""
     }
 
-
-//About to change to TailwindCSS....
     return(
         <div>
             <div className="text-center text-gray-200 text-5xl text-opacity-75">{weatherInfo.city.name}: 5 Days / 3 Hour</div>

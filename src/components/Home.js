@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
-import {
-    Redirect
-} from "react-router-dom";
-import { useSelector , useDispatch } from 'react-redux'
+
+import { useDispatch } from 'react-redux'
 import { changeUserLocation } from './searchbarSlice'
 import Card from './Card'
 
@@ -29,7 +27,7 @@ export default function Home() {
     return (
         <div className="container mx-auto py-8">
             <form onSubmit={handleSubmit}>
-                <input className="text-gray-400 w-full h-16 px-3 rounded-2xl mb-8 focus:outline-none focus:shadow-outline text-xl px-8 shadow-lg bg-opacity-50 bg-gray-700" type="text" value={location} onChange={handleChange} placeholder="Search by Zip Code" />
+                <input className="text-gray-400 w-full h-16 rounded-2xl mb-8 focus:outline-none focus:shadow-outline text-xl px-8 shadow-lg bg-opacity-50 bg-gray-700" type="text" value={location} onChange={handleChange} placeholder="Search by Zip Code" />
                 
             </form>
             {submitted ? <Card /> : null} 
@@ -38,5 +36,3 @@ export default function Home() {
     )
 }
 
-// <div class="container mx-auto py-8">
-// //                 <input class="w-full h-16 px-3 rounded mb-8 focus:outline-none focus:shadow-outline text-xl px-8 shadow-lg" type="search"

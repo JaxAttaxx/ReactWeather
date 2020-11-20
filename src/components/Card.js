@@ -17,13 +17,12 @@ export default function Card(props) {
     useEffect(() => {
         fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${userLocation}${Imperial}&APPID=${APIkey}`)
             .then(res => res.json())
-            // .then(data => data)
-            // .then(data => setWeatherInfos(data))
+            
             .then(data => {
                 console.log("Home Search", data)
                 setWeatherInfo(data)
                 dispatch(changeWeatherLocation(data))
-                // setWeatherInfos(weatherInfos.concat(data.weatherInfo))
+                
             })
             console.log("Weather Infos", weatherInfo)
     }
@@ -50,10 +49,3 @@ export default function Card(props) {
         </div>
     )
 }
-
-//(Time: {weatherInfo.dt}) unix time that needs conversion
-
-//<img src={`http://openweathermap.org/img/w/${weatherInfo.weather[0].icon}.png`} /> old icon pull
-                    
-                    
-                    
