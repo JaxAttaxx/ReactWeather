@@ -27,13 +27,16 @@ export default function Home() {
     }
 
     return (
-        <div>
+        <div className="container mx-auto py-8">
             <form onSubmit={handleSubmit}>
-                <input type="text" value={location} onChange={handleChange} placeholder="Loc search" />
-                <input type="Submit" />
+                <input className="text-gray-400 w-full h-16 px-3 rounded-2xl mb-8 focus:outline-none focus:shadow-outline text-xl px-8 shadow-lg bg-opacity-50 bg-gray-700" type="text" value={location} onChange={handleChange} placeholder="Search by Zip Code" />
+                
             </form>
             {submitted ? <Card /> : null} 
         </div>
 
     )
 }
+
+// <div class="container mx-auto py-8">
+// //                 <input class="w-full h-16 px-3 rounded mb-8 focus:outline-none focus:shadow-outline text-xl px-8 shadow-lg" type="search"

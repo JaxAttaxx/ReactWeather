@@ -33,7 +33,7 @@ console.log(userLocation)
 //About to change to TailwindCSS....
     return(
         <div>
-            <div className="text-center text-gray-200 text-6xl">{weatherInfo.city.name}: 5 Days / 3 Hour</div>
+            <div className="text-center text-gray-200 text-5xl text-opacity-75">{weatherInfo.city.name}: 5 Days / 3 Hour</div>
             <div className="overscroll-contain grid grid-cols-4 gap-4">
             {weatherInfo.list.map((dataBlock, idx) => {
                 
@@ -45,7 +45,7 @@ console.log(userLocation)
                         
                         <div className="px-6 py-4">
                             <div className="text-5xl text-green-400">{Math.round(dataBlock.main.temp)}&#8457;</div>
-                            <div className="text-white text-2xl">{dataBlock.weather[0].main}</div>
+                            <div className="text-red-400 text-2xl">{dataBlock.weather[0].main}</div>
                             <br></br>
                             <div className="text-gray-300 text-sm">{dataBlock.dt_txt}</div>
                         

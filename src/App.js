@@ -22,10 +22,10 @@ function App() {
       <Router>
         <div className="bg-fixed h-screen bg-cover overflow-y-auto" style={{backgroundImage: "url('https://images.pexels.com/photos/3941855/pexels-photo-3941855.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260')"}}>
         <div className="text-white">
-          {/* <h1 className="text-6xl text-red-400 text-center">Weather or not (U.S. Edition)</h1> */}
+          
         <div className="flex justify-center">
-          <img className="" src={logo} alt="app logo"></img>
-          </div>
+          <img className="object-center" src={logo} alt="app logo"></img>
+        </div>
       
 
           <NavBarPage />

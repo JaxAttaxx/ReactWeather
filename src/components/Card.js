@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import { APIkey, Imperial } from "../config"
 import { useSelector , useDispatch } from 'react-redux'
+import { changeWeatherLocation } from './weatherSlice'
+import WeatherIcon from 'react-icons-weather';
+
 
 
 export default function Card(props) {
+
+    const dispatch = useDispatch()
 
     const userLocation = useSelector(state => state.userLocation.userLocation)
 
@@ -17,6 +22,7 @@ export default function Card(props) {
             .then(data => {
                 console.log("Home Search", data)
                 setWeatherInfo(data)
+                dispatch(changeWeatherLocation(data))
                 // setWeatherInfos(weatherInfos.concat(data.weatherInfo))
             })
             console.log("Weather Infos", weatherInfo)
@@ -25,16 +31,29 @@ export default function Card(props) {
         if (!weatherInfo) {
             return ""
         }
+    
     return (
-        <div className="main-card">
-            <h2>{weatherInfo.name} (Time: {weatherInfo.dt})</h2>
-            {/* <h4>Time: {weatherInfo.dt}</h4> */}
-            <h4>Temp: {Math.round(weatherInfo.main.temp)}&#8457;</h4>
-            {/* <i class="wi wi-day-cloudy-high">{weatherInfo.weather[0].icon}</i> */}
-            <img src={`http://openweathermap.org/img/w/${weatherInfo.weather[0].icon}.png`} />
-            <p>{weatherInfo.weather[0].main}</p>
-            {/* <p>{weatherInfo.weather[0].description}</p> */}
+        <div className="flex flex-col justify-center text-center text-gray-200 text-5xl text-opacity-75">{weatherInfo.name} is currently:
+            <div className="m-4 mx-auto text-center max-w-sm rounded-3xl overflow-hidden bg-white bg-opacity-25">
+                    
+                    <div className="text-6xl">
+                        <WeatherIcon name="owm" iconId={weatherInfo.weather[0].id} />
+                    </div>
+                
+                    <div className="px-6 py-4">
+
+                        <div className="text-5xl text-red-400">{weatherInfo.weather[0].main}</div>
+                        <div className="text-5xl text-green-400">Temp: {Math.round(weatherInfo.main.temp)}&#8457;</div>
+                    
+                </div>
+            </div>
         </div>
     )
 }
-// http://openweathermap.org/img/w/${props.icon}.png
+
+//(Time: {weatherInfo.dt}) unix time that needs conversion
+
+//<img src={`http://openweathermap.org/img/w/${weatherInfo.weather[0].icon}.png`} /> old icon pull
+                    
+                    
+                    
